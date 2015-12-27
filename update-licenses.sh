@@ -1,12 +1,13 @@
 #!/usr/bin/env zsh
 
+local prog="${0##*/}"
 (( ${+SEARCH} )) || local SEARCH="$HOME/git"
 (( ${+YEAR} )) || local YEAR=$(date +"%Y")
 
 main() {
     setopt localoptions nonomatch
 
-    echo "${0##*/}: Find license files and extend copyright to given year"
+    echo "$prog: Find license files and extend copyright to given year"
     echo
     echo -n "  Search: "
     echo -e "\e[1;35m$SEARCH\e[1;00m"
